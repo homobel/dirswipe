@@ -6,21 +6,25 @@ function swipe(dir, args) {
 
 	var exports = {};
 
-	fs.readdirSync(dir).forEach(function(file) {
-		if (file === 'index.js') return;
-		if (file.match(/.+\.js/g) === null) return;
+	if (fs.existsSync(dir)) {
 
-		var name = file.replace('.js', '').toLowerCase().replace(/-\D/g, function(match) {
-				return match.charAt(1).toUpperCase();
-			});
+		fs.readdirSync(dir).forEach(function(file) {
+			if (file === 'index.js') return;
+			if (file.match(/.+\.js/g) === null) return;
 
-		exports[name] = require(dir + '/' + file);
+			var name = file.replace('.js', '').toLowerCase().replace(/-\D/g, function(match) {
+					return match.charAt(1).toUpperCase();
+				});
 
-		if (util.isArray(args)) {
-			exports[name].apply(null, args);
-		}
+			exports[name] = require(dir + '/' + file);
 
-	});
+			if (util.isArray(args)) {
+				exports[name].apply(null, args);
+			}
+
+		});
+
+	}
 
 	return exports;
 
