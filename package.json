@@ -1,0 +1,18 @@
+{
+	"name": "dirswipe",
+	"version": "0.1.0",
+	"author": "Archy Sharp",
+	"description": "just convenient modules loader",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/homobel/dirswipe.git"
+	},
+	"main": "dirswipe.js",
+	"keywords": [
+		"directory",
+		"require",
+		"multiple",
+		"camel"
+	],
+	"license": "MIT"
+}
