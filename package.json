@@ -1,8 +1,8 @@
 {
 	"name": "dirswipe",
-	"version": "0.1.1",
+	"version": "0.2.0",
 	"author": "Archy Sharp",
-	"description": "just convenient modules loader",
+	"description": "required path transformes to object with properties in camelCase",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/homobel/dirswipe.git"
